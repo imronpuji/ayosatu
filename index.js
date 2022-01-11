@@ -42,8 +42,8 @@ app.post('/api/image',
 				// let uploadPath =await __dirname + '/public/' + image.name;
 				let uploadPath =await __dirname + '/public/image/compress/';
 				const buff = await resizeImg(image.data, {
-				    width: 200,
-				    height: 200,
+				    width: 500,
+				    height: null,
 		 		});
 
 		 		const randName = Math.random().toString(36).substr(2, 5);
