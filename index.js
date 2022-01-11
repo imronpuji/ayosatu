@@ -67,7 +67,7 @@ app.post('/api/image',
 								message:'yeaa! image converted successfully',
 								url : `http://${req.headers.host}/api/image/${randName+path.extname(image.name)}`
 							},
-							success:false,
+							success:true,
 						}])
 					})
 				}).catch(err =>console.log('err'))
