@@ -13,6 +13,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 
+app.get('/', (req,res)=>{
+	res.status(200).json("OK")
+})
 app.get('/api/image/:title/compress', (req, res)=>{
 	res.sendFile(__dirname+'/public/image/compress/'+req.params.title)
 })
