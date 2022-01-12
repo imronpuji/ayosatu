@@ -55,7 +55,7 @@ app.post('/api/image',
 				});
 				
 				axios.get(`http://localhost:5000?url=http://${req.headers.host}/api/image/${randName+path.extname(image.name)}/compress`, {responseType: 'arraybuffer'}).then(result=>{
-					const fullPath = path.join(__dirname,'/public/image/erase/'+randName+path.extname(image.name))
+					const fullPath = path.join(__dirname,'/public/image/erase/'+randName+'.png')
 					fs.writeFile(fullPath, result.data, function(err) {
 					    if(err) {
 					        return res.status(500).json([{
@@ -68,7 +68,7 @@ app.post('/api/image',
 					    return res.status(200).json([{
 							response:{
 								message:'yeaa! image converted successfully',
-								url : `http://${req.headers.host}/api/image/${randName+path.extname(image.name)}`
+								url : `http://${req.headers.host}/api/image/${randName+'.png'}`
 							},
 							success:true,
 						}])
